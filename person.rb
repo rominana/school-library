@@ -10,11 +10,7 @@ class Person
   end
 
   def propper_age?
-   if @age >= 18
-    return true
-   else 
-    return false
-   end
+    @age >= 18
   end
 
   def can_use_services?
