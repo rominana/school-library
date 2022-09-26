@@ -15,6 +15,6 @@ end
 
 newstudent = Student.new('A-1', 10, 'Joe', parent_permission: false)
 p newstudent.play_hooky
-p newstudent.can_use_services?
 p newstudent.propper_age?
+p newstudent.can_use_services?
 p newstudent

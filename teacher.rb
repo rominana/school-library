@@ -12,6 +12,6 @@ class Teacher < Person
 end
 
 newteacher = Teacher.new('math', 35, 'Mary')
-p newteacher.can_use_services?
 p newteacher.propper_age?
+p newteacher.can_use_services?
 p newteacher
