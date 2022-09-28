@@ -5,7 +5,7 @@ require './trimmer'
 
 class Person < Nameable
   attr_accessor :name, :age
-  attr_reader :id
+  attr_reader :id, :rentals
 
   def initialize(age, name = 'unknown', parent_permission: true)
     super()
@@ -13,6 +13,7 @@ class Person < Nameable
     @name = name
     @age = age
     @parent_permission = parent_permission
+    @rentals = []
   end
 
   def correct_name
@@ -23,15 +24,14 @@ class Person < Nameable
     of_age? || @parent_permission
   end
 
+  private
+
+  def add_rental(rental)
+    @rentals.push(rental)
+    rental.person = self
+  end
+
   def of_age?
     @age >= 18
   end
 end
-
-# example code
-person = Person.new(22, 'maximilianus')
-p person.correct_name
-capitalized_person = CapitalizeDecorator.new(person)
-p capitalized_person.correct_name
-capitalized_trimmed_person = TrimmerDecorator.new(capitalized_person)
-p capitalized_trimmed_person.correct_name
