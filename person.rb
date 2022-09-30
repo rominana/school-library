@@ -1,7 +1,5 @@
 require './nameable'
 require './base_decorator'
-require './capitalize'
-require './trimmer'
 
 class Person < Nameable
   attr_accessor :name, :age
@@ -24,14 +22,14 @@ class Person < Nameable
     of_age? || @parent_permission
   end
 
-  private
+  def of_age?
+    @age >= 18
+  end
 
   def add_rental(rental)
     @rentals.push(rental)
     rental.person = self
   end
 
-  def of_age?
-    @age >= 18
-  end
+  private :of_age?
 end
