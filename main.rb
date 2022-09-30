@@ -8,8 +8,8 @@ def main
   while exit.zero?
     print '
     Please choose an option by entering a number:
-    1 - List all books
-    2 - List all people
+    1 - List all the books
+    2 - List all the people
     3 - Create a person
     4 - Create a book
     5 - Create a rental
