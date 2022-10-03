@@ -22,14 +22,11 @@ class App
     when 2
       list_all_people(people)
     when 3
-      person = create_person
-      @people << person
+      @people << create_person
     when 4
-      book = create_book
-      @books << book
+      @books << create_book
     when 5
-      rental = create_rental(books, people)
-      @rentals << rental
+      @rentals << create_rental(books, people)
     when 6
       list_rentals(rentals)
     else
